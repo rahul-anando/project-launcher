@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\PembeliControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('main');
 });
+
+Route::resource('transaksi', TransaksiControllers::class);
