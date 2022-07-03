@@ -29,3 +29,7 @@ Route::get('/trans', function () {
 Route::get('/user', function () {
     return view('user');
 });
+
+Route::get('/emplo', function () {
+    return view('employee');
+});
