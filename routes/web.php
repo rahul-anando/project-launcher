@@ -21,3 +21,11 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('main');
 });
+
+Route::get('/trans', function () {
+    return view('transaction');
+});
+
+Route::get('/user', function () {
+    return view('user');
+});
