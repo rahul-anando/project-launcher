@@ -12,7 +12,7 @@
                 <h4>Transaction Day</h4>
               </div>
               <div class="card-body">
-                15 
+                15
               </div>
             </div>
           </div>
@@ -52,38 +52,40 @@
       <div class="col-12 col-md-6 col-lg-5">
           <div class="card">
             <div class="card-header">
-              <h4>HTML5 Form Basic</h4>
+              <h4>Buat Transaksi Baru</h4>
             </div>
+        <form action="store" method="POST">
+            @csrf
             <div class="card-body">
               <div class="form-group">
                 <label>Nama Customer</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="nama_cost" id="nama_cost" placeholder="Masukkan Nama Customer">
               </div>
               <div class="form-group">
                 <label>Alamat</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Customer">
               </div>
               <div class="form-group">
                 <label>Nama Petugas</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="nama_petugas" id="nama_petugas" placeholder="Masukkan Nama Petugas">
               </div>
               <div class="row ">
                 <div class="col-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Waktu Selesai</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="selesai" id="selesai">
                   </div>
                 </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Total Berat</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="total_berat" id="total_berat">
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label>Jenis Laundry</label>
-                <select class="form-control form-control-lg">
+                <select class="form-control form-control-lg" name="jenis_laundry" id="jenis_laundry">
                   <option>Cepat</option>
                   <option>Cepat + Setrika</option>
                   <option>Reguler</option>
@@ -92,19 +94,19 @@
               </div>
               <div class="row">
                 <div class="col-form-label col-sm-6 pt-0">
-                  <label>Status Member</label>
+                  <label>Status Pembayaran</label>
                 </div>
                 <div class="col-sm-9">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked="">
+                    <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Lunas" checked="">
                     <label class="form-check-label" for="">
-                      Member
+                      Lunas
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Belum Lunas">
                     <label class="form-check-label" for="">
-                      Bukan Member
+                      Belum Lunas
                     </label>
                   </div>
                 </div>
@@ -112,7 +114,7 @@
 </br>
               <div class="form-group">
                 <label>Diskon</label>
-                <select class="form-control form-control-lg">
+                <select class="form-control form-control-lg" name="diskon_member" id="diskon_member">
                   <option>0 %</option>
                   <option>10 %</option>
                   <option>15 %</option>
@@ -120,6 +122,7 @@
               </div>
               <button class="btn btn-primary mr-1" type="submit">Submit</button>
             </div>
+        </form>
           </div>
       </div>
       <div class="col-lg-7 col-md-6 col-12 ">

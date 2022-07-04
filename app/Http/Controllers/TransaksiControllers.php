@@ -4,24 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\TransaksiModel;
 use Illuminate\Http\Request;
+use DB;
 
 class TransaksiControllers extends Controller
 {
 
     public function index()
     {
-        $transaksis = Transaksi::all();
-        return view('main', compact('transaksis'));
+        /* $transaksis = Transaksi::all();
+        return view('transaksi.transaction', compact('transaksis')); */
+        $result = DB::table('transaksis')->get();
+        return view('transaksi.transaction', ['transaksis' => $result]);
     }
 
     public function create()
     {
-        return view('transaksi.create');
+        return view('main');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $request->validate([
+        /* $request->validate([
             'nama_cost'         => 'required|string|max:255',
             'alamat'            => 'required|string|max:255',
             'nama_petugas'      => 'required|string|max:255',
@@ -32,15 +35,25 @@ class TransaksiControllers extends Controller
             'diskon_member'     => 'required'
             ]);
 
-        Transaksi::create($request->all());
+        Transaksi::create($request->all()); */
 
-        /*  return redirect('/')->with('status', 'Data Transaksi berhasil ditambahkan!');
-        */
+        $result = DB::table('transaksis')->insert([
+            'nama_cost' => request()->nama_cost,
+            'alamat' => request()->alamat,
+            'nama_petugas' => request()->nama_petugas,
+            'selesai' => request()->selesai,
+            'jenis_laundry' => request()->jenis_laundry,
+            'total_berat' => request()->total_berat,
+            'status_pembayaran' => request()->status_pembayaran,
+            'diskon_member' => request()->diskon_member
+        ]);
+
+        return redirect('/main')->with('status', 'Data Transaksi berhasil ditambahkan!');
     }
 
     public function edit($id)
     {
-        return view('transaksi.edit', compact('transaksi'));
+        return view('transaksi.edit_transaction', compact('transaksi'));
     }
 
     public function update(Request $request, $id)
@@ -50,12 +63,6 @@ class TransaksiControllers extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $transaksi = Transaksi::findOrFail($id);

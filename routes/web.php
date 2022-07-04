@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TransaksiControllers;
 
-use App\Http\Controllers\PembeliControllers;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,7 @@ use App\Http\Controllers\PembeliControllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('transaksi', TransaksiControllers::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,8 +23,13 @@ Route::get('/home', function () {
     return view('main');
 });
 
+Route::resource('transaksi', TransaksiControllers::class);
+
+Route::post('store', [TransaksiControllers::class, 'store'])->name('store');
+
+/*
 Route::get('/trans', function () {
-    return view('transaction');
+    return view('transaksi.transaction');
 });
 
 Route::get('/user', function () {
@@ -33,4 +38,13 @@ Route::get('/user', function () {
 
 Route::get('/emplo', function () {
     return view('employee');
+});
+ */
+
+/* Route::resource('trans', 'TransaksiControllers', [
+    'only' => ['index']
+]); */
+
+Route::get('/edit', function () {
+    return view('transaksi.edit_transaction');
 });
