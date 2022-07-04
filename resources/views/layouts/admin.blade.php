@@ -14,6 +14,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 
 
@@ -32,7 +33,7 @@
 
       <footer class="main-footer">
         <div class="footer-left">
-          develop with liver
+          develop with <strong>liver and burning brain</strong>
         </div>
         <div class="footer-right">
           1.1.1

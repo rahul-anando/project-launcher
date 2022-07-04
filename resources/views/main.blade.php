@@ -2,65 +2,59 @@
 @section('content')
 <section class="section">
     <div class="row">
-        <div class="col-lg-3 col-sm-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex align-items-start pb-0">
-                    <div>
-                        {{-- <h2 class="text-bold-700 mb-0">{{$masuk}}</h2> --}}
-                        <p>Pengguna</p>
-                    </div>
-                    <div class="avatar bg-rgba-success p-50 m-0">
-                        <div class="avatar-content">
-                            <i class="feather icon-box text-success font-medium-5"></i>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-dollar-sign"></i>
             </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex align-items-start pb-0">
-                    <div>
-                        {{-- <h2 class="text-bold-700 mb-0">{{$selesai}}</h2> --}}
-                        <p>Membership</p>
-                    </div>
-                    <div class="avatar bg-rgba-danger p-50 m-0">
-                        <div class="avatar-content">
-                            <i class="feather icon-check text-danger font-medium-5"></i>
-                        </div>
-                    </div>
-                </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Transaction Day</h4>
+              </div>
+              <div class="card-body">
+                15 
+              </div>
             </div>
+          </div>
         </div>
-        <div class="col-lg-3 col-sm-6 col-12">
-            <div class="card">
-                <div class="card-header d-flex align-items-start pb-0">
-                    <div>
-                        {{-- <h2 class="text-bold-700 mb-0">{{$diambil}}</h2> --}}
-                        <p>Transaksi</p>
-                    </div>
-                    <div class="avatar bg-rgba-warning p-50 m-0">
-                        <div class="avatar-content">
-                            <i class="feather icon-check-square text-warning font-medium-5"></i>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-user"></i>
             </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Member</h4>
+              </div>
+              <div class="card-body">
+                12 Users
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="section-header">
-      <h1>Blank Page</h1>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <div class="card card-statistic-2">
+            <div class="card-icon shadow-primary bg-primary">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Employee</h4>
+              </div>
+              <div class="card-body">
+                10
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-6">
+      <div class="col-12 col-md-6 col-lg-5">
           <div class="card">
             <div class="card-header">
               <h4>HTML5 Form Basic</h4>
             </div>
             <div class="card-body">
-              <div class="alert alert-info">
-                <b>Note!</b> Not all browsers support HTML5 type input.
-              </div>
               <div class="form-group">
                 <label>Nama Customer</label>
                 <input type="text" class="form-control">
@@ -73,9 +67,19 @@
                 <label>Nama Petugas</label>
                 <input type="text" class="form-control">
               </div>
-              <div class="form-group">
-                <label>Waktu Selesai</label>
-                <input type="date" class="form-control">
+              <div class="row ">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <label>Waktu Selesai</label>
+                    <input type="date" class="form-control">
+                  </div>
+                </div>
+                <div class="colcol-12 col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <label>Total Berat</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label>Jenis Laundry</label>
@@ -86,27 +90,26 @@
                   <option>Reguler + Setrika</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label>Total Berat</label>
-                <input type="text" class="form-control">
-              </div>
               <div class="row">
-                <div class="col-form-label col-sm-3 pt-0">Status Pembayaran</div>
+                <div class="col-form-label col-sm-6 pt-0">
+                  <label>Status Member</label>
+                </div>
                 <div class="col-sm-9">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked="">
                     <label class="form-check-label" for="">
-                    Lunas
+                      Member
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="">
-                      Belum Lunas
+                      Bukan Member
                     </label>
                   </div>
                 </div>
               </div>
+</br>
               <div class="form-group">
                 <label>Diskon</label>
                 <select class="form-control form-control-lg">
@@ -116,8 +119,49 @@
                 </select>
               </div>
               <button class="btn btn-primary mr-1" type="submit">Submit</button>
-
-    <div class="section-body">
-    </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-7 col-md-6 col-12 ">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Latest Transaction</h4>
+                  <div class="card-header-action">
+                    <a href="#" class="btn btn-primary">View All</a>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                      <thead>
+                        <tr>
+                          <th>Weight</th>
+                          <th>Users</th>
+                          <th>Pay</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            Introduction Laravel 5
+                            <div class="table-links">
+                              in <a href="#">Web Development</a>
+                              <div class="bullet"></div>
+                              <a href="#">View</a>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                          </td>
+                          <td>
+                          Rp. 200.000,-
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
   </section>
 @endsection
