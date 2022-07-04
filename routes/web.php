@@ -14,7 +14,7 @@ use App\Http\Controllers\PembeliControllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('transaksi', TransaksiControllers::class);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,4 +23,4 @@ Route::get('/home', function () {
     return view('main');
 });
 
-Route::resource('transaksi', TransaksiControllers::class);
+
