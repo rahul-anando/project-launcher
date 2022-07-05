@@ -63,12 +63,16 @@ class TransaksiControllers extends Controller
 
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
-        $transaksi = Transaksi::findOrFail($id);
-        $transaksi->delete();
+      /*$transaksis = Transaksi::findOrFail($id);
+        $transaksis->delete();
+        */
 
-        return redirect()->route('transaksi.index')->with('success', 'Data Transaksi berhasil dihapus');
+    /*    return redirect()->route('transaksi.transaction')->with('success', 'Data Transaksi berhasil dihapus');
+ */
+        $result = DB::table('transaksis')->where('id', $id)->delete();
+        return redirect('transaksi');
     }
 
 

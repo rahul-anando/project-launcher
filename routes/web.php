@@ -26,6 +26,8 @@ Route::get('/home', function () {
 Route::resource('transaksi', TransaksiControllers::class);
 
 Route::post('store', [TransaksiControllers::class, 'store'])->name('store');
+Route::delete('delete/{transaksi:id}', [TransaksiControllers::class, 'delete'])->name('delete');
+
 
 /*
 Route::get('/trans', function () {
