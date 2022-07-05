@@ -42,7 +42,7 @@
                                 <form action="delete/{{ $transaksi->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">Hapus</button>
+                                    <button class="btn btn-danger" type="submit" onclick="return confirm('Are You Sure?')">Hapus</button>
                                 </form>
                             </td>
                         </tr>
