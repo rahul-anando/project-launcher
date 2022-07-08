@@ -21,6 +21,7 @@ class CreateTransaksisTable extends Migration
             $table->date('selesai');
             $table->string('jenis_laundry');
             $table->integer('total_berat');
+            $table->integer('total_biaya');
             $table->string('status_pembayaran');
             $table->string('diskon_member');
             $table->timestamps();
