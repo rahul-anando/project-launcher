@@ -79,8 +79,7 @@ class TransaksiControllers extends Controller
         $transaksis->delete();
         */
 
-    /*    return redirect()->route('transaksi.transaction')->with('success', 'Data Transaksi berhasil dihapus');
- */
+    /*    return redirect()->route('transaksi.transaction')->with('success', 'Data Transaksi berhasil dihapus'); */
         $result = DB::table('transaksis')->where('id', $id)->delete();
         return redirect('transaksi');
     }
