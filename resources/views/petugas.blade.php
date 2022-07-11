@@ -6,6 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Data Petugas</h4>
+                    <button class="btn btn-primary" onclick="create()">Tambah Data</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

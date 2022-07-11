@@ -73,19 +73,19 @@
                 <div class="col-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Waktu Selesai</label>
-                    <input type="date" class="form-control" name="selesai" id="selesai">
+                    <input type="date" class="form-control" name="selesai" id="selesai" required>
                   </div>
                 </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Total Berat</label>
-                    <input type="text" class="form-control" name="total_berat" id="total_berat">
+                    <input type="text" class="form-control" name="total_berat" id="total_berat" required>
                   </div>
                 </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Total Biaya</label>
-                    <input type="text" class="form-control" name="total_biaya" id="total_biaya">
+                    <input type="text" class="form-control" name="total_biaya" id="total_biaya" required>
                   </div>
                 </div>
               </div>
