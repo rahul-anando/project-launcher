@@ -6,8 +6,13 @@ use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use DB;
 
-class TransaksiControllers extends Controller
+class TransaksiController extends Controller
 {
+    public function home()
+    {
+        $transaksis = Transaksi::all();
+        return view('main', compact('transaksis'));
+    }
 
     public function index()
     {
@@ -57,9 +62,9 @@ class TransaksiControllers extends Controller
         return view('transaksi.edit_transaction', compact('transaksi'));
     }
 
-    public function update($id)
+    public function update(Transaksi $transaksi)
     {
-        $result = DB::table('transaksis')->where('id', $id)->update([
+       /*  $result = DB::table('transaksis')->where('id', $id)->update([
             'nama_cost' => request()->nama_cost,
             'alamat' => request()->alamat,
             'nama_petugas' => request()->nama_petugas,
@@ -69,20 +74,31 @@ class TransaksiControllers extends Controller
             'total_biaya' => request()->total_biaya,
             'status_pembayaran' => request()->status_pembayaran,
             'diskon_member' => request()->diskon_member
+        ]); */
+
+        $transaksi->update([
+            'nama_cost' => request()->nama_cost,
+            'alamat' => request()->alamat,
+            'nama_petugas' => request()->nama_petugas,
+            'selesai' => request()->selesai,
+            'jenis_laundry' => request()->jenis_laundry,
+            'total_berat' => request()->total_berat,
+            'total_biaya' => request()->total_biaya,
+            'status_pembayaran' => request()->status_pembayaran,
+            'diskon_member' => request()->diskon_member,
         ]);
 
         return redirect('/transaksi')->with('status', 'Data Transaksi berhasil diubah!');
 
     }
 
-    public function delete($id)
+    public function delete(Transaksi $transaksi)
     {
-      /*$transaksis = Transaksi::findOrFail($id);
-        $transaksis->delete();
-        */
 
-    /*    return redirect()->route('transaksi.transaction')->with('success', 'Data Transaksi berhasil dihapus'); */
-        $result = DB::table('transaksis')->where('id', $id)->delete();
+        $transaksi->delete();
+        /* $transaksi = Transaksi::findOrFail($id); */
+        /* return redirect()->route('transaksi.transaction')->with('success', 'Data Transaksi berhasil dihapus'); */
+        /* $result = DB::table('transaksis')->where('id', $id)->delete(); */
         return redirect('transaksi');
     }
 

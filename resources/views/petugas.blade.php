@@ -5,14 +5,14 @@
         <div class="col-12 ">
             <div class="card">
                 <div class="card-header">
-                    <h4>Simple Table</h4>
+                    <h4>Data Petugas</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-md">
                         <tr>
-                            <th>Date</th>
-                            <th>Name</th>
+                            <th>No</th>
+                            <th>Nama</th>
                             <th>Created At</th>
                             <th>Status</th>
                             <th>Action</th>

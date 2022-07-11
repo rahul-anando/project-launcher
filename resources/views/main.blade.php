@@ -59,15 +59,15 @@
             <div class="card-body">
               <div class="form-group">
                 <label>Nama Customer</label>
-                <input type="text" class="form-control" name="nama_cost" id="nama_cost" placeholder="Masukkan Nama Customer">
+                <input type="text" class="form-control" name="nama_cost" id="nama_cost" placeholder="Masukkan Nama Customer" required>
               </div>
               <div class="form-group">
                 <label>Alamat</label>
-                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Customer">
+                <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Customer" required>
               </div>
               <div class="form-group">
                 <label>Nama Petugas</label>
-                <input type="text" class="form-control" name="nama_petugas" id="nama_petugas" placeholder="Masukkan Nama Petugas">
+                <input type="text" class="form-control" name="nama_petugas" id="nama_petugas" placeholder="Masukkan Nama Petugas" required>
               </div>
               <div class="row ">
                 <div class="col-12 col-md-6 col-lg-5">
@@ -136,7 +136,7 @@
                 <div class="card-header">
                   <h4>Latest Transaction</h4>
                   <div class="card-header-action">
-                    <a href="#" class="btn btn-primary">View All</a>
+                    <a href="{{route ('index')}}" class="btn btn-primary">View All</a>
                   </div>
                 </div>
                 <div class="card-body p-0">
@@ -144,29 +144,22 @@
                     <table class="table table-striped mb-0">
                       <thead>
                         <tr>
-                          <th>Weight</th>
-                          <th>Users</th>
-                          <th>Pay</th>
+                          <th>Total Berat</th>
+                          <th>Nama Customer</th>
+                          <th>Total Biaya</th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach ($transaksis as $transaksi)
                         <tr>
+                          <td>{{ $transaksi->total_berat }}Kg</td>
                           <td>
-                            Introduction Laravel 5
-                            <div class="table-links">
-                              in <a href="#">Web Development</a>
-                              <div class="bullet"></div>
-                              <a href="#">View</a>
-                            </div>
+                            <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> {{ $transaksi->nama_cost }}</a>
                           </td>
-                          <td>
-                            <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                          </td>
-                          <td>
-                          Rp. 200.000,-
-                          </td>
+                          <td>Rp{{ $transaksi->total_biaya }}</td>
                         </tr>
                       </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>

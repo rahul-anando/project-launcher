@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand mt-4">
-        <h4><a href="index.html">Launcher</a></h4>
+        <h4><a href="home">Launcher</a></h4>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">St</a>
@@ -24,16 +24,16 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('index')}}">Transaction</a></li>
-              <li><a class="nav-link" href="index.html">Member</a></li>
-              <li><a class="nav-link" href="index.html">Employee</a></li>
+              <li><a class="nav-link" href="">Membership</a></li>
+              <li><a class="nav-link" href="index.html">Petugas</a></li>
             </ul>
           </li>
         </ul>
 
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+       {{--  <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
           <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
             <i class="fas fa-rocket"></i> Documentation
           </a>
-        </div>
+        </div> --}}
     </aside>
   </div>
