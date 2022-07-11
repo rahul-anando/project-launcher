@@ -82,6 +82,12 @@
                     <input type="text" class="form-control" name="total_berat" id="total_berat">
                   </div>
                 </div>
+                <div class="colcol-12 col-md-6 col-lg-5">
+                  <div class="form-group">
+                    <label>Total Biaya</label>
+                    <input type="text" class="form-control" name="total_biaya" id="total_biaya">
+                  </div>
+                </div>
               </div>
               <div class="form-group">
                 <label>Jenis Laundry</label>

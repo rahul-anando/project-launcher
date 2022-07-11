@@ -14,7 +14,7 @@
               <span>Dashboard</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
+              <li><a class="nav-link" href="{{route('home')}}">General Dashboard</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -23,7 +23,7 @@
               <span>Other</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="index-0.html">Transaction</a></li>
+              <li><a class="nav-link" href="{{route('index')}}">Transaction</a></li>
               <li><a class="nav-link" href="index.html">Member</a></li>
               <li><a class="nav-link" href="index.html">Employee</a></li>
             </ul>

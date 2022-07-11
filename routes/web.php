@@ -21,9 +21,10 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('main');
-});
-
-Route::resource('transaksi', TransaksiControllers::class);
+})->name('home');
+/*
+Route::resource('transaksi', TransaksiControllers::class); */
+Route::get('transaksi', [TransaksiControllers::class, 'index'])->name('index');
 
 Route::post('store', [TransaksiControllers::class, 'store'])->name('store');
 Route::delete('delete/{transaksi:id}', [TransaksiControllers::class, 'delete'])->name('delete');
@@ -46,9 +47,5 @@ Route::get('/emplo', function () {
 
 /* Route::resource('trans', 'TransaksiControllers', [
     'only' => ['index']
-]); */
-
-/* Route::get('/edit', function () {
-    return view('transaksi.edit_transaction');
-});
+]);
  */

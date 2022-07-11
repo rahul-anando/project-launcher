@@ -11,10 +11,10 @@ class TransaksiControllers extends Controller
 
     public function index()
     {
-        /* $transaksis = Transaksi::all();
-        return view('transaksi.transaction', compact('transaksis')); */
-        $result = DB::table('transaksis')->get();
-        return view('transaksi.transaction', ['transaksis' => $result]);
+        $transaksis = Transaksi::all();
+        return view('transaksi.transaction', compact('transaksis'));
+       /*  $result = DB::table('transaksis')->get();
+        return view('transaksi.transaction', ['transaksis' => $result]); */
     }
 
     public function create()
@@ -31,6 +31,7 @@ class TransaksiControllers extends Controller
             'selesai'           => 'required|date',
             'jenis_laundry'     => 'required',
             'total_berat'       => 'required|numeric',
+            'total_biaya'       => 'required|numeric',
             'status_pembayaran' => 'required',
             'diskon_member'     => 'required'
             ]);
@@ -65,11 +66,12 @@ class TransaksiControllers extends Controller
             'selesai' => request()->selesai,
             'jenis_laundry' => request()->jenis_laundry,
             'total_berat' => request()->total_berat,
+            'total_biaya' => request()->total_biaya,
             'status_pembayaran' => request()->status_pembayaran,
             'diskon_member' => request()->diskon_member
         ]);
 
-        return redirect('/main')->with('status', 'Data Transaksi berhasil diubah!');
+        return redirect('/transaksi')->with('status', 'Data Transaksi berhasil diubah!');
 
     }
 

@@ -17,6 +17,7 @@
                             <th>Waktu Selesai</th>
                             <th>Jenis Laundry</th>
                             <th>Total Berat</th>
+                            <th>Total Biaya</th>
                             <th>Status Pembayaran</th>
                             <th>Diskon Member</th>
                             <th>Action</th>
@@ -29,8 +30,15 @@
                             <td>{{ $transaksi->nama_petugas }}</td>
                             <td>{{ $transaksi->selesai }}</td>
                             <td>{{ $transaksi->jenis_laundry }}</td>
-                            <td>{{ $transaksi->total_berat }}</td>
-                            <td><div class="badge badge-success">Active</div></td>
+                            <td>{{ $transaksi->total_berat }}Kg</td>
+                            <td>Rp{{ $transaksi->total_biaya }}</td>
+
+                            @if($transaksi->status_pembayaran == "Lunas")
+                            <td><div class="badge badge-success">Lunas</div></td>
+                            @elseif($transaksi->status_pembayaran == "Belum Lunas")
+                            <td><div class="badge badge-danger">Belum Lunas</div></td>
+                            @endif
+
                             <td>{{ $transaksi->diskon_member }}</td>
                             <td>
                                 <a class="btn btn-primary btn-action mr-1" href="edit/{{ $transaksi->id }}" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
@@ -42,7 +50,7 @@
                                 <form action="delete/{{ $transaksi->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger" type="submit" onclick="return confirm('Are You Sure?')">Hapus</button>
+                                    <button class="btn btn-danger" type="submit" onclick="return confirm('Yakin mau dihapus qaqa?')">Hapus</button>
                                 </form>
                             </td>
                         </tr>

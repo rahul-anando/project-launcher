@@ -43,13 +43,19 @@
                     <div class="col-12 col-md-6 col-lg-5">
                         <div class="form-group">
                             <label>Waktu Selesai</label>
-                            <input type="date" class="form-control" name="selesai" id="selesai" value="{{date("Y-m-d\TH:i", strtotime($transaksi->datetime))}}">
+                            <input type="date" class="form-control" name="selesai" id="selesai" value="{{$transaksi->selesai}}">
                         </div>
                     </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                     <div class="form-group">
                         <label>Total Berat</label>
                         <input type="text" class="form-control" name="total_berat" id="total_berat" value="{{ $transaksi->total_berat }}">
+                    </div>
+                    </div>
+                <div class="colcol-12 col-md-6 col-lg-5">
+                    <div class="form-group">
+                        <label>Total Biaya</label>
+                        <input type="text" class="form-control" name="total_biaya" id="total_biaya" value="{{ $transaksi->total_biaya }}">
                     </div>
                     </div>
                 </div>
@@ -84,7 +90,7 @@
 </br>
             <div class="form-group">
               <label>Diskon</label>
-              <select class="form-control form-control-lg" name="diskon_member" id="diskon_member" value="{{ $transaksi->diskon_member }}">
+              <select class="form-control form-control-lg" name="diskon_member" id="diskon_member">
                   <option>0 %</option>
                   <option>10 %</option>
                   <option>15 %</option>

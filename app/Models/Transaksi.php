@@ -16,6 +16,7 @@ class Transaksi extends Model
         'selesai' ,
         'jenis_laundry' ,
         'total_berat' ,
+        'total_biaya' ,
         'status_pembayaran' ,
         'diskon_member'
     ];
