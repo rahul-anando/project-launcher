@@ -4,7 +4,7 @@
         <h4><a href="home">Launcher</a></h4>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
+        <a href="index.html">LC</a>
       </div>
       <ul class="sidebar-menu">
           <li class="menu-header">Features</li>
@@ -24,8 +24,8 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('index')}}">Transaction</a></li>
-              <li><a class="nav-link" href="">Membership</a></li>
-              <li><a class="nav-link" href="index.html">Petugas</a></li>
+              <li><a class="nav-link" href="{{route('member')}}">Membership</a></li>
+              <li><a class="nav-link" href="{{route('petugas')}}">Petugas</a></li>
             </ul>
           </li>
         </ul>
