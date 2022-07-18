@@ -49,51 +49,58 @@
                 <div class="colcol-12 col-md-6 col-lg-5">
                     <div class="form-group">
                         <label>Total Berat</label>
-                        <input type="text" class="form-control" name="total_berat" id="total_berat" value="{{ $transaksi->total_berat }}">
+                        <input type="number" class="form-control" name="total_berat" id="total_berat" value="{{ $transaksi->total_berat }}">
                     </div>
                     </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                     <div class="form-group">
                         <label>Total Biaya</label>
-                        <input type="text" class="form-control" name="total_biaya" id="total_biaya" value="{{ $transaksi->total_biaya }}">
+                        <input type="number" class="form-control" name="total_biaya" id="total_biaya" value="{{ $transaksi->total_biaya }}">
                     </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Jenis Laundry</label>
-                    <select class="form-control form-control-lg" name="jenis_laundry" id="jenis_laundry" value="{{ $transaksi->jenis_laundry }}">
-                        <option>Cepat</option>
-                        <option>Cepat + Setrika</option>
-                        <option>Reguler</option>
-                        <option>Reguler + Setrika</option>
+                    <select class="form-control form-control-lg" name="jenis_laundry" id="jenis_laundry" >
+                        <option value="Cepat" {{ $transaksi->jenis_laundry == 'Cepat' ? 'selected' : '' }}>Cepat</option>
+                        <option value="Cepat + Setrika" {{ $transaksi->jenis_laundry == 'Cepat + Setrika' ? 'selected' : '' }}>Cepat + Setrika</option>
+                        <option value="Reguler" {{ $transaksi->jenis_laundry == 'Reguler' ? 'selected' : '' }}>Reguler</option>
+                        <option value="Reguler + Setrika" {{ $transaksi->jenis_laundry == 'Reguler + Setrika' ? 'selected' : '' }}>Reguler + Setrika</option>
                     </select>
                 </div>
-                <div class="row">
+      {{--           <div class="row">
                     <div class="col-form-label col-sm-6 pt-0">
                     <label>Status Pembayaran</label>
                 </div>
-                <div class="col-sm-9">
+                 <div class="col-sm-9">
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Lunas" checked="">
-                      <label class="form-check-label" for="">
+                      <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Lunas" {{ $transaksi->jenis_laundry == 'Lunas'? 'checked' : ''}} >
                         Lunas
-                      </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Belum Lunas">
-                      <label class="form-check-label" for="">
+                      <input class="form-check-input" type="radio" name="status_pembayaran" id="status_pembayaran" value="Belum Lunas" {{ $transaksi->jenis_laundry == 'Belum Lunas'? 'checked' : ''}}>
                         Belum Lunas
-                      </label>
                     </div>
                   </div>
+                </div> --}}
+
+                <div class="form-group">
+                    <label for="status_pembayaran">Status Pembayaran</label> <br>
+                    <label for="status_pembayaran">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status_pembayaran" value="Lunas" id="status_pembayaran" {{$transaksi->status_pembayaran == 'Lunas'? 'checked' : ''}} >Lunas
+                        <br>
+                        <input class="form-check-input" type="radio" name="status_pembayaran" value="Belum Lunas" id="status_pembayaran" {{$transaksi->status_pembayaran == 'Belum Lunas'? 'checked' : ''}} >Belum Lunas
+                    </label>
                 </div>
-</br>
+                </div>
+
             <div class="form-group">
               <label>Diskon</label>
               <select class="form-control form-control-lg" name="diskon_member" id="diskon_member">
-                  <option>0 %</option>
-                  <option>10 %</option>
-                  <option>15 %</option>
+                  <option value="0 %" {{ $transaksi->diskon_member == '0 %' ? 'selected' : '' }}>0 %</option>
+                  <option value="10 %" {{ $transaksi->diskon_member == '10 %' ? 'selected' : '' }}>10 %</option>
+                  <option value="15 %" {{ $transaksi->diskon_member == '15 %' ? 'selected' : '' }}>15 %</option>
                 </select>
             </div>
             <button class="btn btn-primary mr-1" type="submit">Submit</button>

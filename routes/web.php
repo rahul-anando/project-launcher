@@ -60,15 +60,15 @@ Route::middleware('auth')->get('/', function () {
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-//Login Multilevel
-Route::middleware(['auth', 'Ceklevel:admin'])->group(function () {
+/* Login Multilevel
+Route::middleware(['auth', 'Ceklevel:admin'])->group(function () { */
     Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');
     Route::get('member', [MembershipController::class, 'member'])->name('member');
     Route::get('petugas', [PetugasController::class, 'petugas'])->name('petugas');
-});
+/* });
 Route::middleware(['auth', 'Ceklevel:user'])->group(function () {
 });
-
+  */
 
 // Route::get('/member', function () {
 //     return view('member.membership');

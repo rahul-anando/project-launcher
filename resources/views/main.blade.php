@@ -79,13 +79,13 @@
                 <div class="colcol-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Total Berat</label>
-                    <input type="text" class="form-control" name="total_berat" id="total_berat" required>
+                    <input type="number" class="form-control" name="total_berat" id="total_berat" required>
                   </div>
                 </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                   <div class="form-group">
                     <label>Total Biaya</label>
-                    <input type="text" class="form-control" name="total_biaya" id="total_biaya" required>
+                    <input type="number" class="form-control" name="total_biaya" id="total_biaya" required>
                   </div>
                 </div>
               </div>
