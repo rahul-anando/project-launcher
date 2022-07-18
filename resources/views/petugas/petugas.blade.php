@@ -19,7 +19,7 @@
                                     <th>Action</th>
                                 </tr>
                                 <tr>
-                                    @foreach ($petugass as $petugas)
+                                    @foreach ($petugas as $petugas)
                                 <tr>
                                     <td>{{ $petugas->id }}</td>
                                     <td>{{ $petugas->nama_petugas }}</td>
@@ -28,15 +28,12 @@
                                         <div class="badge badge-success">{{ $petugas->status }}</div>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary mr-1" data-toggle="tooltip" title="Edit"
-                                            onclick="edits({{ $petugas->id }})"><i class="fas fa-pencil-alt"></i></button>
-                                        {{-- <a class="btn btn-primary btn-action mr-1" href="edit/{{ $petugas->id }}" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a> --}}
+                                        <a class="btn btn-primary btn-action mr-1" href="edits/{{ $petugas->id }}" data-toggle="tooltip" title="Edit">Edit</a>
                                         <form action="apus/{{ $petugas->id }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger mr-1" type="submit" data-toggle="tooltip"
-                                                title="Delete" onclick="return confirm('Are You Sure?')"><i
-                                                    class="fa fa-trash" aria-hidden="true"></i></button>
+                                                title="Delete" onclick="return confirm('Are You Sure?')">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -91,14 +88,6 @@
     function baru() {
         $.get("{{ url('petugas.create') }}", {}, function(data, status) {
             $("#exampleModalLabel").html('Tambah Data Petugas Baru');
-            $("#page").html(data);
-            $("#exampleModal").modal('show');
-        });
-    }
-
-    function edits(id) {
-        $.get("{{ url('edits/{petugas:id}') }}", {}, function(data, status) {
-            $("#exampleModalLabel").html('Edit');
             $("#page").html(data);
             $("#exampleModal").modal('show');
         });

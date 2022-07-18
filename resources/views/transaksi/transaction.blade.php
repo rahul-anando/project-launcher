@@ -41,7 +41,7 @@
 
                             <td>{{ $transaksi->diskon_member }}</td>
                             <td>
-                                <a class="btn btn-primary btn-action mr-1" href="edit/{{ $transaksi->id }}" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-primary btn-action mr-1" href="edit/{{ $transaksi->id }}" data-toggle="tooltip" title="Edit">Edit</a>
                                 {{-- <form action="delete/{{ $transaksi->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')

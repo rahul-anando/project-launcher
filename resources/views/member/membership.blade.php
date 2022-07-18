@@ -32,12 +32,12 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Alamat</th>
-                                    <th>No Telephone</th>
+                                    <th>No Telepon</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
-                                @foreach ($members as $member)
+                                @foreach ($member as $member)
                                     <tr>
                                         <td>{{ $member->id }}</td>
                                         <td>{{ $member->nama_member }}</td>
@@ -48,15 +48,12 @@
                                             <div class="badge badge-success">{{ $member->status }}</div>
                                         </td>
                                         <td>
-                                            <button class="btn btn-primary mr-1" data-toggle="tooltip"
-                                            title="Edit" onclick="ubah({{ $member->id }})"><i class="fas fa-pencil-alt"></i></button>
-                                            {{--<a class="btn btn-primary btn-action mr-1" href="edit/{{ $member->id }}" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>--}}
+                                            <a class="btn btn-primary btn-action mr-1" href="ubah/{{ $member->id }}" data-toggle="tooltip" title="Edit">Edit</a>
                                             <form action="hapus/{{ $member->id }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger mr-1" type="submit" data-toggle="tooltip"
-                                                    title="Delete" onclick="return confirm('Are You Sure?')"><i
-                                                        class="fa fa-trash" aria-hidden="true"></i></button>
+                                                    title="Delete" onclick="return confirm('Are You Sure?')">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -109,13 +106,6 @@
             function tambah() {
                 $.get("{{ url('member.create') }}", {}, function(data, status) {
                     $("#exampleModalLabel").html('Membership');
-                    $("#page").html(data);
-                    $("#exampleModal").modal('show');
-                });
-            }
-            function ubah(id) {
-                $.get("{{ url('ubah/{member:id}') }}", {}, function(data, status) {
-                    $("#exampleModalLabel").html('Edit');
                     $("#page").html(data);
                     $("#exampleModal").modal('show');
                 });

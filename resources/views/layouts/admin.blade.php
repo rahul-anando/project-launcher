@@ -33,10 +33,7 @@
 
       <footer class="main-footer">
         <div class="footer-left">
-          Develop with <strong>liver and burning brain</strong>
-        </div>
-        <div class="footer-right">
-          1.1.1
+           <strong>Launcher</strong>
         </div>
       </footer>
     </div>

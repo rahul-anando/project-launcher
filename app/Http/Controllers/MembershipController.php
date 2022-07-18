@@ -12,8 +12,8 @@ class MembershipController extends Controller
 
     public function member()
     {
-        $members = Membership::all();
-        return view('member.membership', compact('members'));
+        $member = Membership::all();
+        return view('member.membership', compact('member'));
     }
 
     public function tambah()
@@ -45,13 +45,13 @@ class MembershipController extends Controller
         */
     }
 
-    public function ubah(Membership $members)
+    public function ubah(Membership $member)
     {
 
-        return view('member.edit', compact('members'));
+        return view('member.edit', compact('member'));
     }
 
-    public function update(Membership $member)
+    public function updated(Membership $member)
     {
         $member->update([
             'nama_member' => request()->nama_member,

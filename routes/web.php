@@ -3,6 +3,7 @@
 use App\Http\Controllers\{TransaksiController, LoginController, MembershipController, PetugasController};
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,7 @@ Route::get('home', [TransaksiController::class, 'home'])->name('home');
 
 /*
 Route::resource('transaksi', TransaksiControllers::class); */
-Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');
+
 
 //Transaksi
 Route::post('store', [TransaksiController::class, 'store'])->name('store');
@@ -35,15 +36,13 @@ Route::get('edit/{transaksi:id}', [TransaksiController::class, 'edit'])->name('e
 Route::put('update/{transaksi:id}', [TransaksiController::class, 'update'])->name('update');
 
 //Member
-Route::get('member', [MembershipController::class, 'member'])->name('member');
 Route::get('/member.create', [MembershipController::class, 'tambah']);
 Route::post('add', [MembershipController::class, 'add'])->name('add');
 Route::delete('hapus/{member:id}', [MembershipController::class, 'hapus'])->name('hapus');
 Route::get('ubah/{member:id}', [MembershipController::class, 'ubah'])->name('ubah');
-Route::put('update/{member:id}', [MembershipController::class, 'update'])->name('update');
+Route::put('updated/{member:id}', [MembershipController::class, 'updated'])->name('updated');
 
 //Petugas
-Route::get('petugas', [PetugasController::class, 'petugas'])->name('petugas');
 Route::get('/petugas.create', [PetugasController::class, 'baru']);
 Route::post('storea', [PetugasController::class, 'storea'])->name('storea');
 Route::delete('apus/{petugas:id}', [PetugasController::class, 'apus'])->name('apus');
@@ -60,6 +59,15 @@ Route::middleware('auth')->get('/', function () {
 
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Login Multilevel
+Route::middleware(['auth', 'Ceklevel:admin'])->group(function () {
+    Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');
+    Route::get('member', [MembershipController::class, 'member'])->name('member');
+    Route::get('petugas', [PetugasController::class, 'petugas'])->name('petugas');
+});
+Route::middleware(['auth', 'Ceklevel:user'])->group(function () {
+});
 
 
 // Route::get('/member', function () {

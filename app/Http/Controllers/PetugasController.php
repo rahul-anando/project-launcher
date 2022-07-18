@@ -12,8 +12,8 @@ class PetugasController extends Controller
 
     public function petugas()
     {
-        $petugass = Petugas::all();
-        return view('petugas.petugas', compact('petugass'));
+        $petugas = Petugas::all();
+        return view('petugas.petugas', compact('petugas'));
     }
 
     public function baru()
@@ -31,7 +31,7 @@ class PetugasController extends Controller
             'status' => 'required',
             ]);
             Petugas::create($request->all());
-            return redirect('/petugas')->with('status', 'Data Member berhasil ditambahkan!');
+            return redirect('/petugas')->with('status', 'Data Petugas berhasil ditambahkan!');
 
         /*  $result = DB::table('members')->insert([
             'nama_member' => request()->nama_member,
@@ -45,23 +45,23 @@ class PetugasController extends Controller
         */
     }
 
-    public function edits(Petugas $petugass)
+    public function edits(Petugas $petugas)
     {
 
-        return view('petugas.edit', compact('petugass'));
+        return view('petugas.edit', compact('petugas'));
     }
 
-    public function updates(Petugas $petugass)
+    public function updates(Petugas $petugas)
     {
-        $petugass->update([
-            'nama_member' => request()->nama_member,
-            'alamat' => request()->alamat,
-            'no_telephone' => request()->no_telephone,
-            'jenis_kelamin' => request()->jenis_kelamin,
+        $petugas->update([
+            'nama_petugas' => request()->nama_petugas,
+            'username' => request()->username,
+            'password' => request()->password,
+            'no_telepon' => request()->no_telepon,
             'status' => request()->status,
         ]);
 
-        return redirect('/petugas')->with('status', 'Data Member berhasil diubah!');
+        return redirect('/petugas')->with('status', 'Data Petugas berhasil diubah!');
     }
 
     public function apus($id)
