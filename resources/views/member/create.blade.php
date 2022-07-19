@@ -19,6 +19,6 @@
         </select>
     </div>
     <div class="form-group mt-2">
-        <button class="btn btn-primary"">Create</button>
+        <button class="btn btn-primary">Create</button>
     </div>
 </form>

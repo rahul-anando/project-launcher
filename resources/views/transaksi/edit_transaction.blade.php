@@ -30,32 +30,62 @@
                     <div class="form-group">
                         <label>Nama Customer</label>
                         <input type="text" class="form-control" name="nama_cost" id="nama_cost" placeholder="Masukkan Nama Customer" value="{{ $transaksi->nama_cost }}">
+                        @error('nama_cost')
+                            <span class="text-danger small">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>
                         <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukkan Alamat Customer" value="{{ $transaksi->alamat }}">
+                        @error('alamat')
+                            <span class="text-danger small">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                      <div class="form-group">
                         <label>Nama Petugas</label>
                         <input type="text" class="form-control" name="nama_petugas" id="nama_petugas" placeholder="Masukkan Nama Petugas" value="{{ $transaksi->nama_petugas }}">
+                        @error('nama_petugas')
+                            <span class="text-danger small">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-5">
                         <div class="form-group">
                             <label>Waktu Selesai</label>
                             <input type="date" class="form-control" name="selesai" id="selesai" value="{{$transaksi->selesai}}">
+                            @error('selesai')
+                                <span class="text-danger small">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
                     </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                     <div class="form-group">
                         <label>Total Berat</label>
                         <input type="number" class="form-control" name="total_berat" id="total_berat" value="{{ $transaksi->total_berat }}">
+                        @error('total_berat')
+                            <span class="text-danger small">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                     </div>
                 <div class="colcol-12 col-md-6 col-lg-5">
                     <div class="form-group">
                         <label>Total Biaya</label>
                         <input type="number" class="form-control" name="total_biaya" id="total_biaya" value="{{ $transaksi->total_biaya }}">
+                        @error('total_biaya')
+                            <span class="text-danger small">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                     </div>
                 </div>
