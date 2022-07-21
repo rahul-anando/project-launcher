@@ -12,8 +12,8 @@
                 <h4>Transaction Day</h4>
               </div>
               <div class="card-body">
-                15
-              </div>
+                {{ $total }}
+            </div>
             </div>
           </div>
         </div>
@@ -185,13 +185,13 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($transaksis as $transaksi)
+                        @foreach ($trans as $tran)
                         <tr>
-                          <td>{{ $transaksi->total_berat }}Kg</td>
+                          <td>{{ $tran->total_berat }}Kg</td>
                           <td>
-                            <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> {{ $transaksi->nama_cost }}</a>
+                            <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> {{ $tran->nama_cost }}</a>
                           </td>
-                          <td>Rp{{ $transaksi->total_biaya }}</td>
+                          <td>Rp{{ $tran->total_biaya }}</td>
                         </tr>
                       </tbody>
                       @endforeach

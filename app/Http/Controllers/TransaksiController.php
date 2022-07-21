@@ -10,8 +10,11 @@ class TransaksiController extends Controller
 {
     public function home()
     {
+        /* $total = DB::table('transaksis')->count(); */
+        $total = Transaksi::count();
         $transaksis = Transaksi::all();
-        return view('main', compact('transaksis'));
+        $trans = Transaksi::orderBy('created_at', 'desc')->get();
+        return view('main', compact('transaksis', 'trans', 'total'));
     }
 
     public function index()

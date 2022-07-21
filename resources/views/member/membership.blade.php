@@ -37,9 +37,10 @@
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
+                                @php $no = 1; @endphp
                                 @foreach ($member as $member)
                                     <tr>
-                                        <td>{{ $member->id }}</td>
+                                        <td>{{ $no++ }}</td>
                                         <td>{{ $member->nama_member }}</td>
                                         <td>{{ $member->alamat }}</td>
                                         <td>{{ $member->no_telephone }}</td>

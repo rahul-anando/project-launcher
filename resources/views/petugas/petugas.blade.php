@@ -19,9 +19,10 @@
                                     <th>Action</th>
                                 </tr>
                                 <tr>
+                                    @php $no = 1; @endphp
                                     @foreach ($petugas as $petugas)
                                 <tr>
-                                    <td>{{ $petugas->id }}</td>
+                                    <td>{{ $no++ }}</td>
                                     <td>{{ $petugas->nama_petugas }}</td>
                                     <td>{{ $petugas->no_telepon }}</td>
                                     <td>

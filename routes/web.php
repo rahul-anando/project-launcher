@@ -55,19 +55,20 @@ Route::get('/login', [LoginController::class, 'view'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
 Route::middleware('auth')->get('/', function () {
     return "Berhasil Login";
+    return view('/home');
 })->name('home');
 
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //Login Multilevel
-Route::middleware(['auth', 'Ceklevel:admin'])->group(function () {
-    Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');
+/* Route::middleware(['auth', 'Ceklevel:admin'])->group(function () {
+ */ Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');
     Route::get('member', [MembershipController::class, 'member'])->name('member');
     Route::get('petugas', [PetugasController::class, 'petugas'])->name('petugas');
-});
+/* });
 Route::middleware(['auth', 'Ceklevel:user'])->group(function () {
-});
+}); */
 
 
 // Route::get('/member', function () {

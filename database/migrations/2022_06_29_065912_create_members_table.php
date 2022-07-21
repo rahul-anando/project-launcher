@@ -17,7 +17,7 @@ class CreateMembersTable extends Migration
             $table->id();
             $table->string('nama_member');
             $table->char('alamat');
-            $table->integer('no_telephone');
+            $table->char('no_telephone');
             $table->string('jenis_kelamin');
             $table->timestamps();
         });
