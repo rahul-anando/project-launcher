@@ -14,6 +14,7 @@ class Petugas extends Model
         'username' ,
         'password' ,
         'no_telepon' ,
+        'foto' ,
         'status' ,
     ];
 }

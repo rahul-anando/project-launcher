@@ -23,6 +23,8 @@ Route::get('/', function () {
     return view('main');
 })->name('home'); */
 
+
+
 Route::get('home', [TransaksiController::class, 'home'])->name('home');
 
 /*

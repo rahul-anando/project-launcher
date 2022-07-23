@@ -19,7 +19,8 @@ class CreatePetugassTable extends Migration
             $table->char('username');
             $table->char('password');
             $table->string('no_telepon');
-            $table->string('image');
+            $table->string('foto');
+            $table->string('status');
             $table->timestamps();
         });
     }

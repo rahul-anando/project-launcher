@@ -44,6 +44,9 @@
                            <label for="name">No Telepon</label>
                            <input type="text" name="no_telepon" id="no_telepon" class="form-control"
                                placeholder="No Telepon" value="{{ $petugas->no_telepon }}">
+                           <label for="name">Foto</label>
+                           <input type="file" name="foto" id="foto" class="form-control"
+                               placeholder="Foto"  value="{{ $petugas->foto }}">
                            <label for="name">Status</label>
                            <select class="form-control form-control-lg" name="status" id="status">
                                <option>Active</option>

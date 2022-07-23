@@ -23,15 +23,24 @@ class PetugasController extends Controller
 
     public function storea(Request $request)
     {
-        $request->validate([
-            'nama_petugas'         => 'required|string|max:255',
-            'username'            => 'required|max:255',
-            'password'            => 'required|max:255',
-            'no_telepon'      => 'required|max:12',
-            'status' => 'required',
-            ]);
-            Petugas::create($request->all());
-            return redirect('/petugas')->with('status', 'Data Petugas berhasil ditambahkan!');
+    //    dd($request->all());
+
+       $request->validate([
+        'nama_petugas'         => 'required|string|max:255',
+        'username'            => 'required|max:255',
+        'password'            => 'required|max:255',
+        'no_telepon'      => 'required|max:12',
+        'foto' => 'required',
+        'status' => 'required',
+        ]);
+        $data = Petugas::create($request->all());
+
+        if($request->hasfile('foto')) {
+            $request->file('foto')->move('foto/', $request->file('foto')->getClientOriginalName());
+            $data->foto = $request->file('foto')->getClientOriginalName();
+            $data->save();
+        }
+        return redirect('/petugas')->with('status', 'Data Petugas berhasil ditambahkan!');
 
         /*  $result = DB::table('members')->insert([
             'nama_member' => request()->nama_member,
@@ -58,6 +67,7 @@ class PetugasController extends Controller
             'username' => request()->username,
             'password' => request()->password,
             'no_telepon' => request()->no_telepon,
+            'foto' => request()->foto,
             'status' => request()->status,
         ]);
 

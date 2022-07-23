@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
             $table->char('alamat');
             $table->char('no_telephone');
             $table->string('jenis_kelamin');
+            $table->string('status');
             $table->timestamps();
         });
     }
