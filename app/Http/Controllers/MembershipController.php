@@ -59,6 +59,7 @@ class MembershipController extends Controller
             'alamat' => request()->alamat,
             'no_telephone' => request()->no_telephone,
             'jenis_kelamin' => request()->jenis_kelamin,
+            'diskon_member' => request()->diskon_member,
             'status' => request()->status,
         ]);
 

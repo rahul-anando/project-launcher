@@ -13,7 +13,7 @@
             <option>Perempuan</option>
         </select>
         <label for="" class="mt-2">Diskon Member</label>
-        <input type="text" name="diskon_member" id="diskon_member" class="form-control" placeholder="Diskon Member">
+        <input type="text" name="diskon_member" id="diskon_member" class="form-control" placeholder="Diskon Member" value="10%">
         <label for="">Status</label>
         <select class="form-control form-control-lg" name="status" id="status">
             <option>Active</option>

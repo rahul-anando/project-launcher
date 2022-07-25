@@ -161,7 +161,6 @@
                 <select class="form-control form-control-lg" name="diskon_member" id="diskon_member">
                   <option>0 %</option>
                   <option>10 %</option>
-                  <option>15 %</option>
                 </select>
                 @error('diskon_member')
                         <span class="text-danger small">
