@@ -94,6 +94,7 @@ class TransaksiController extends Controller
             'total_berat' => request()->total_berat,
             'total_biaya' => request()->total_biaya,
             'status_pembayaran' => request()->status_pembayaran,
+            'member_id' => request()->member_id,
             'diskon_member' => request()->diskon_member,
         ]);
 

@@ -68,6 +68,8 @@
                             <option value="Laki-laki" {{ $member->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                             <option value="Perempuan" {{ $member->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                         </select>
+                        <label for="name">Diskon Member</label>
+                        <input type="text" name="diskon_member" id="diskon_member" class="form-control" placeholder="No Telephone" value="{{ $member->diskon_member }}">
                         <label for="name">Status</label>
                         <select class="form-control form-control-lg" name="status" id="status">
                             <option value="Active" {{ $member->status == 'Active' ? 'selected' : '' }}>Active</option>

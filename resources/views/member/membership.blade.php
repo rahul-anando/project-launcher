@@ -35,6 +35,7 @@
                                     <th>Alamat</th>
                                     <th>No Telepon</th>
                                     <th>Jenis Kelamin</th>
+                                    <th>Diskon Member</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -46,9 +47,14 @@
                                         <td>{{ $member->alamat }}</td>
                                         <td>{{ $member->no_telephone }}</td>
                                         <td>{{ $member->jenis_kelamin }}</td>
-                                        <td>
-                                            <div class="badge badge-success">{{ $member->status }}</div>
-                                        </td>
+                                        <td>{{ $member->diskon_member }}</td>
+
+                                        @if($member->status == "Active")
+                                        <td><div class="badge badge-success">Active</div></td>
+                                        @elseif($member->status == "Nonactive")
+                                        <td><div class="badge badge-danger">Nonactive</div></td>
+                                        @endif
+
                                         <td>
                                             <a class="btn btn-primary btn-action mr-1" href="ubah/{{ $member->id }}" data-toggle="tooltip" title="Edit">Edit</a>
                                             <form action="hapus/{{ $member->id }}" method="POST">

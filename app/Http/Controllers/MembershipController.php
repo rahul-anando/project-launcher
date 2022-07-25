@@ -24,11 +24,12 @@ class MembershipController extends Controller
     public function add(Request $request)
     {
         $request->validate([
-            'nama_member'         => 'required|string|max:255',
+            'nama_member'       => 'required|string|max:255',
             'alamat'            => 'required|string|max:255',
             'no_telephone'      => 'required|string|max:255',
             'jenis_kelamin'     => 'required',
-            'status' => 'required',
+            'diskon_member'     => 'required',
+            'status'            => 'required',
             ]);
             Membership::create($request->all());
             return redirect('/member')->with('status', 'Data Member berhasil ditambahkan!');

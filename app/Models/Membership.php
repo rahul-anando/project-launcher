@@ -14,6 +14,7 @@ class Membership extends Model
         'alamat' ,
         'no_telephone' ,
         'jenis_kelamin' ,
+        'diskon_member' ,
         'status',
     ];
 
