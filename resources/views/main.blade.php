@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <section class="section">
+    <h4>@section('title') Dashboard @endsection</h4>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
           <div class="card card-statistic-2">

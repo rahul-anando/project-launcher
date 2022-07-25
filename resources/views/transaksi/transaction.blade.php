@@ -5,7 +5,9 @@
         <div class="col-12 ">
             <div class="card">
                 <div class="card-header">
+                    @section('title') Transaksi @endsection
                     <h4>Daftar Transaksi</h4>
+                    <a href="/home" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

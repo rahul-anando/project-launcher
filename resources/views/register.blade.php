@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login</title>
+    <title>Register</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,7 +13,7 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="../node_modules/selectric/public/selectric.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -34,16 +34,23 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4>Login</h4>
+                                <h4>Register</h4>
                             </div>
-
                             <div class="card-body">
-                                <form method="POST" action="/login" class="needs-validation" novalidate="">
+                                <form method="POST" action="/registeruser" class="needs-validation" novalidate="">
                                     @csrf
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input id="name" type="name" class="form-control" name="name"
+                                            tabindex="1" required autofocus value="{{ old('name') }}">
+                                        <div class="invalid-feedback">
+                                            Please fill in your Name
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input id="email" type="email" class="form-control" name="email"
-                                            tabindex="1" required autofocus>
+                                            tabindex="1" required value="{{ old('email') }}">
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>
@@ -52,11 +59,6 @@
                                     <div class="form-group">
                                         <div class="d-block">
                                             <label for="password" class="control-label">Password</label>
-                                            <div class="float-right">
-                                                <a href="auth-forgot-password.html" class="text-small">
-                                                    Forgot Password?
-                                                </a>
-                                            </div>
                                         </div>
                                         <input id="password" type="password" class="form-control" name="password"
                                             tabindex="2" required>
@@ -65,29 +67,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" name="remember" class="custom-control-input"
-                                                tabindex="3" id="remember-me">
-                                            <label class="custom-control-label" for="remember-me">Remember Me</label>
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                                            Login
-                                        </button>
-                                        <div class="float-right">
-                                            <a href="/register" class="text-small">
-                                                Don't have an account?
+                                    <div class="form-divider">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                                Register
+                                            </button>
+                                            <div class="float-right">
+                                            <a href="/login" class="text-small">
+                                                Already have an account?
                                             </a>
+                                            </div>
                                         </div>
-                                    </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
     </div>
 
@@ -104,12 +101,15 @@
     <script src="../assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
+    <script src="../node_modules/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+    <script src="../node_modules/selectric/public/jquery.selectric.min.js"></script>
 
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <script src="../assets/js/page/auth-register.js"></script>
 </body>
 
 </html>

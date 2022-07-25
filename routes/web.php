@@ -63,6 +63,11 @@ Route::middleware('auth')->get('/', function () {
 //Logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
+//Register
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+
+
 //Login Multilevel
 /* Route::middleware(['auth', 'Ceklevel:admin'])->group(function () {
  */ Route::get('transaksi', [TransaksiController::class, 'index'])->name('index');

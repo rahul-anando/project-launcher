@@ -23,6 +23,7 @@
                 <div class="col-12 ">
                     <div class="card">
                         <div class="card-header">
+                            @section('title') Membership @endsection
                             <h4>Membership</h4>
                             <button class="btn btn-primary" id="btn-tambah " onclick="tambah()">Tambah Member</button>
                         </div>
