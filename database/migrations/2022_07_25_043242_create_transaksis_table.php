@@ -23,7 +23,7 @@ class CreateTransaksisTable extends Migration
             $table->integer('total_berat');
             $table->integer('total_biaya');
             $table->string('status_pembayaran');
-            $table->foreignId('member_id')->references('id')->on('members')->onDelete('cascade');
+            $table->foreignId('member_id')->nullable()->references('id')->on('members')->onDelete('cascade');
             $table->string('status_member')->nullable();
             $table->string('diskon_member');
             $table->timestamps();
