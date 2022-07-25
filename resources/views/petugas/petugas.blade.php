@@ -5,6 +5,7 @@
             <div class="col-12 ">
                 <div class="card">
                     <div class="card-header">
+                        @section('title') Petugas @endsection
                         <h4>Data Petugas</h4>
                         <button class="btn btn-primary" onclick="baru()">Tambah Data</button>
                     </div>

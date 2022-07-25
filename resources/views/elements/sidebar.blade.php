@@ -4,7 +4,7 @@
         <h4><a href="home">Launcher</a></h4>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">LC</a>
+        <a href="home">LC</a>
       </div>
       <ul class="sidebar-menu">
           <li class="menu-header">Features</li>

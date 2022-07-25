@@ -5,7 +5,7 @@
         <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
       </ul>
       <div class="section-header mt-4 text-light">
-        <h1>Dashboard</h1>
+        <h1>@yield('title')</h1>
       </div>
     </form>
     <ul class="navbar-nav navbar-right">
