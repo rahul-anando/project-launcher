@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Petugas;
+use App\Models\Membership;
 use Illuminate\Http\Request;
 use DB;
 
@@ -12,9 +14,11 @@ class TransaksiController extends Controller
     {
         /* $total = DB::table('transaksis')->count(); */
         $total = Transaksi::count();
+        $allpetugas = Petugas::count();
+        $members = Membership::count();
         $transaksis = Transaksi::all();
         $trans = Transaksi::orderBy('created_at', 'desc')->get();
-        return view('main', compact('transaksis', 'trans', 'total'));
+        return view('main', compact('transaksis', 'trans', 'total', 'members', 'allpetugas'));
     }
 
     public function index()

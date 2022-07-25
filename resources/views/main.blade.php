@@ -27,7 +27,7 @@
                 <h4>Member</h4>
               </div>
               <div class="card-body">
-                12 Users
+                {{ $members }}
               </div>
             </div>
           </div>
@@ -39,10 +39,10 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Employee</h4>
+                <h4>Petugas</h4>
               </div>
               <div class="card-body">
-                10
+                {{ $allpetugas }}
               </div>
             </div>
           </div>
@@ -182,6 +182,7 @@
                           <th>Total Berat</th>
                           <th>Nama Customer</th>
                           <th>Total Biaya</th>
+                          <th>Status</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -192,6 +193,7 @@
                             <a href="#" class="font-weight-600"><img src="../assets/img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> {{ $tran->nama_cost }}</a>
                           </td>
                           <td>Rp{{ $tran->total_biaya }}</td>
+                          <td>{{ $tran->status_pembayaran }}</td>
                         </tr>
                       </tbody>
                       @endforeach

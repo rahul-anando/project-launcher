@@ -26,6 +26,7 @@
                             <h4>Membership</h4>
                             <button class="btn btn-primary" id="btn-tambah " onclick="tambah()">Tambah Member</button>
                         </div>
+                    <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-md">
                                 <tr>
@@ -61,6 +62,7 @@
                                 @endforeach
                             </table>
                         </div>
+                    </div>
                         <div class="card-footer text-right">
                             <nav class="d-inline-block">
                                 <ul class="pagination mb-0">

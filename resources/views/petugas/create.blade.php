@@ -8,7 +8,6 @@
                 {{ $message }}
             </span>
         @enderror
-    </div>
         <label for="" class="mt-2">Username</label>
         <input type="text" name="username" id="username" class="form-control" placeholder="Username">
         @error('username')
