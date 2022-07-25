@@ -12,7 +12,7 @@ class Transaksi extends Model
     protected $fillable = [
         'nama_cost' ,
         'alamat' ,
-        'nama_petugas' ,
+        'petugas_id' ,
         'selesai' ,
         'jenis_laundry' ,
         'total_berat' ,
@@ -20,5 +20,10 @@ class Transaksi extends Model
         'status_pembayaran' ,
         'diskon_member'
     ];
+
+    public function petugas()
+    {
+        return $this->belongsTo(Petugas::class);
+    }
 
 }

@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ $transaksi->nama_cost }}</td>
                             <td>{{ $transaksi->alamat }}</td>
-                            <td>{{ $transaksi->nama_petugas }}</td>
+                            <td>{{ $transaksi->petugas->nama_petugas }}</td>
                             <td>{{ $transaksi->selesai }}</td>
                             <td>{{ $transaksi->jenis_laundry }}</td>
                             <td>{{ $transaksi->total_berat }}Kg</td>

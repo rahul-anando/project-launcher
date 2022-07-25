@@ -45,15 +45,14 @@
                             </span>
                         @enderror
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label>Nama Petugas</label>
-                        <input type="text" class="form-control" name="nama_petugas" id="nama_petugas" placeholder="Masukkan Nama Petugas" value="{{ $transaksi->nama_petugas }}">
-                        @error('nama_petugas')
-                            <span class="text-danger small">
-                                {{ $message }}
-                            </span>
-                        @enderror
-                    </div>
+                        <select class="form-control" name="petugas_id" id="petugas_id">
+                        @foreach ($petugass as $item)
+                            <option value="{{ $item->id}}" {{ old('petugas_id', $transaksi->petugas_id) == $item->id ? 'selected' : null }}>{{$item->nama_petugas}}</option>
+                        @endforeach
+                        </select>
+                      </div>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-5">
                         <div class="form-group">

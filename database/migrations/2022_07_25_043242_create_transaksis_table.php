@@ -17,7 +17,7 @@ class CreateTransaksisTable extends Migration
             $table->id();
             $table->string('nama_cost');
             $table->char('alamat');
-            $table->char('nama_petugas');
+            $table->foreignId('petugas_id')->references('id')->on('petugass')->onDelete('cascade');
             $table->date('selesai');
             $table->string('jenis_laundry');
             $table->integer('total_berat');
