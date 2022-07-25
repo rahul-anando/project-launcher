@@ -45,16 +45,15 @@
                            <input type="text" name="no_telepon" id="no_telepon" class="form-control"
                                placeholder="No Telepon" value="{{ $petugas->no_telepon }}">
                            <label for="name">Foto</label>
-                           <input type="file" name="foto" id="foto" class="form-control"
-                               placeholder="Foto"  value="{{ $petugas->foto }}">
+                           <input type="file" name="foto" id="foto" class="form-control">
                            <label for="name">Status</label>
                            <select class="form-control form-control-lg" name="status" id="status">
-                               <option>Active</option>
-                               <option>Nonactive</option>
+                               <option value="Active" {{ $petugas->status == 'Active' ? 'selected' : '' }}>Active</option>
+                               <option value="Nonactive" {{ $petugas->status == 'Nonactive' ? 'selected' : '' }}>Nonactive</option>
                            </select>
                        </div>
+                       <button class="btn btn-primary mr-1" type="submit">Submit</button>
                    </div>
-                   <button class="btn btn-primary mr-1" type="submit">Submit</button>
                </form>
            </div>
        </div>

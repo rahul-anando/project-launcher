@@ -27,11 +27,11 @@ class PetugasController extends Controller
 
        $request->validate([
         'nama_petugas'         => 'required|string|max:255',
-        'username'            => 'required|max:255',
-        'password'            => 'required|max:255',
-        'no_telepon'      => 'required|max:12',
-        'foto' => 'required',
-        'status' => 'required',
+        'username'             => 'required|max:255',
+        'password'             => 'required|max:255',
+        'no_telepon'           => 'required|max:12',
+        'foto'                 => 'image|mimes:jpeg,jpg,png|max:1024',
+        'status'               => 'required',
         ]);
         $data = Petugas::create($request->all());
 

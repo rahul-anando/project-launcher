@@ -65,17 +65,17 @@
                         <input type="text" name="no_telephone" id="no_telephone" class="form-control" placeholder="No Telephone" value="{{ $member->no_telephone }}">
                         <label for="name">Jenis Kelamin</label>
                         <select class="form-control form-control-lg" name="jenis_kelamin" id="jenis_kelamin">
-                            <option>Laki-laki</option>
-                            <option>Perempuan</option>
+                            <option value="Laki-laki" {{ $member->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                            <option value="Perempuan" {{ $member->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                         </select>
                         <label for="name">Status</label>
                         <select class="form-control form-control-lg" name="status" id="status">
-                            <option>Active</option>
-                            <option>Nonactive</option>
+                            <option value="Active" {{ $member->status == 'Active' ? 'selected' : '' }}>Active</option>
+                            <option value="Nonactive" {{ $member->status == 'Nonactive' ? 'selected' : '' }}>Nonactive</option>
                         </select>
                     </div>
+                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
                    </div>
-                   <button class="btn btn-primary mr-1" type="submit">Submit</button>
                </form>
            </div>
        </div>

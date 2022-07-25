@@ -26,7 +26,7 @@
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $petugas->nama_petugas }}</td>
                                     <td>{{ $petugas->no_telepon }}</td>
-                                    <td><img src="{{ asset('foto/'. $petugas->foto) }}" alt="" style="width: 60px"></td>
+                                    <td><img src="{{ $petugas->takeImage() }}" alt="" style="width: 60px"></td>
                                     <td>
                                         <div class="badge badge-success">{{ $petugas->status }}</div>
                                     </td>

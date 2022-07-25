@@ -17,4 +17,9 @@ class Petugas extends Model
         'foto' ,
         'status' ,
     ];
+
+    public function takeImage()
+    {
+        return '/foto/' . $this->foto;
+    }
 }
