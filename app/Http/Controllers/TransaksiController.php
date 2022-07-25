@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
+use App\Models\Petugas;
+use App\Models\Membership;
 use Illuminate\Http\Request;
 use DB;
 
@@ -10,8 +12,14 @@ class TransaksiController extends Controller
 {
     public function home()
     {
+        /* $total = DB::table('transaksis')->count(); */
+        $total = Transaksi::count();
+        $allpetugas = Petugas::count();
+        $members = Membership::count();
+        $petugass = Petugas::all();
         $transaksis = Transaksi::all();
-        return view('main', compact('transaksis'));
+        $trans = Transaksi::orderBy('created_at', 'desc')->get();
+        return view('main', compact('transaksis', 'trans', 'total', 'petugass', 'members', 'allpetugas'));
     }
 
     public function index()
@@ -32,7 +40,7 @@ class TransaksiController extends Controller
         $request->validate([
             'nama_cost'         => 'required|string|max:255',
             'alamat'            => 'required|string|max:255',
-            'nama_petugas'      => 'required|string|max:255',
+            'petugas_id'        => 'required',
             'selesai'           => 'required|date',
             'jenis_laundry'     => 'required',
             'total_berat'       => 'required|numeric',
@@ -59,7 +67,8 @@ class TransaksiController extends Controller
 
     public function edit(Transaksi $transaksi)
     {
-        return view('transaksi.edit_transaction', compact('transaksi'));
+        $petugass = Petugas::all();
+        return view('transaksi.edit_transaction', compact('transaksi', 'petugass'));
     }
 
     public function update(Transaksi $transaksi)
@@ -79,12 +88,13 @@ class TransaksiController extends Controller
         $transaksi->update([
             'nama_cost' => request()->nama_cost,
             'alamat' => request()->alamat,
-            'nama_petugas' => request()->nama_petugas,
+            'petugas_id' => request()->petugas_id,
             'selesai' => request()->selesai,
             'jenis_laundry' => request()->jenis_laundry,
             'total_berat' => request()->total_berat,
             'total_biaya' => request()->total_biaya,
             'status_pembayaran' => request()->status_pembayaran,
+            'member_id' => request()->member_id,
             'diskon_member' => request()->diskon_member,
         ]);
 

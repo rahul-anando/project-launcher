@@ -5,7 +5,9 @@
         <div class="col-12 ">
             <div class="card">
                 <div class="card-header">
+                    @section('title') Transaksi @endsection
                     <h4>Daftar Transaksi</h4>
+                    <a href="/home" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -27,7 +29,7 @@
                         <tr>
                             <td>{{ $transaksi->nama_cost }}</td>
                             <td>{{ $transaksi->alamat }}</td>
-                            <td>{{ $transaksi->nama_petugas }}</td>
+                            <td>{{ $transaksi->petugas->nama_petugas }}</td>
                             <td>{{ $transaksi->selesai }}</td>
                             <td>{{ $transaksi->jenis_laundry }}</td>
                             <td>{{ $transaksi->total_berat }}Kg</td>
@@ -41,7 +43,7 @@
 
                             <td>{{ $transaksi->diskon_member }}</td>
                             <td>
-                                <a class="btn btn-primary btn-action mr-1" href="edit/{{ $transaksi->id }}" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                <a class="btn btn-primary btn-action mr-1" href="edit/{{ $transaksi->id }}" data-toggle="tooltip" title="Edit">Edit</a>
                                 {{-- <form action="delete/{{ $transaksi->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')

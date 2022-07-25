@@ -4,12 +4,13 @@
         <h4><a href="home">Launcher</a></h4>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">St</a>
+        <a href="home">LC</a>
       </div>
       <ul class="sidebar-menu">
           <li class="menu-header">Features</li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown">
+{{--             @if (auth()->user()->level=="admin")
+ --}}            <a href="#" class="nav-link has-dropdown">
               <i class="fas fa-fire"></i>
               <span>Dashboard</span>
             </a>
@@ -20,17 +21,27 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link has-dropdown">
               <i class="fas fa-fire"></i>
-              <span>Other</span>
+              <span>Data</span>
             </a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('index')}}">Transaction</a></li>
-              <li><a class="nav-link" href="">Membership</a></li>
-              <li><a class="nav-link" href="index.html">Petugas</a></li>
+              <li><a class="nav-link" href="{{route('member')}}">Membership</a></li>
+              <li><a class="nav-link" href="{{route('petugas')}}">Petugas</a></li>
             </ul>
           </li>
         </ul>
-
-       {{--  <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+ {{--        @endif
+        @if (auth()->user()->level=="user") --}}
+{{--         <a href="#" class="nav-link has-dropdown">
+            <i class="fas fa-fire"></i>
+            <span>Dashboard</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{route('home')}}">General Dashboard</a></li>
+          </ul>
+        </li> --}}
+{{--         @endif
+ --}}       {{--  <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
           <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
             <i class="fas fa-rocket"></i> Documentation
           </a>
