@@ -19,9 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* Route::get('/home', function () {
+Route::get('/home', function () {
     return view('main');
-})->name('home'); */
+})->name('home');
+
+//Login
+Route::get('/login', [LoginController::class, 'view'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
+
+//Logout
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+//Register
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+
 
 //Middleware
 Route::middleware(['auth'])->group(function () {
@@ -29,12 +41,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('member', [MembershipController::class, 'member'])->name('member');
     Route::get('petugas', [PetugasController::class, 'petugas'])->name('petugas');
 
-    Route::get('home', [TransaksiController::class, 'home'])->name('home');
+    Route::get('home', [TransaksiController::class, 'home'])->name('transaksi.home');
 
     /*
 Route::resource('transaksi', TransaksiControllers::class); */
-
-
     //Transaksi
     Route::post('store', [TransaksiController::class, 'store'])->name('store');
     Route::delete('delete/{transaksi:id}', [TransaksiController::class, 'delete'])->name('delete');
@@ -56,38 +66,8 @@ Route::resource('transaksi', TransaksiControllers::class); */
     Route::put('updates/{petugas:id}', [PetugasController::class, 'updates'])->name('updates');
 });
 
-//Login
-Route::get('/login', [LoginController::class, 'view'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate'])->name('login.auth');
-Route::middleware('auth')->get('/', function () {
-    return "Berhasil Login";
-    return view('/home');
-})->name('home');
-
-//Logout
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-//Register
-Route::get('/register', [LoginController::class, 'register'])->name('register');
-Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
 
 
 
 
 
-
-
-// Route::get('/member', function () {
-//     return view('member.membership');
-// });
-
-// Route::get('/emplo', function () {
-//     return view('petugas');
-// });
-
-
-
-/* Route::resource('trans', 'TransaksiControllers', [
-    'only' => ['index']
-]);
- */

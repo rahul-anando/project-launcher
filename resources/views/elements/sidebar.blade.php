@@ -15,7 +15,7 @@
               <span>Dashboard</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="{{route('home')}}">General Dashboard</a></li>
+              <li><a class="nav-link" href="{{route('transaksi.home')}}">General Dashboard</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
